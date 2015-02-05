@@ -13,7 +13,7 @@ print '*** creating map ***'
 
 # the ll and ur mean lower-left corner, upper-right corner etc. for zooming on a region
 
-map = Basemap(projection = 'merc', lat_0 = 0, lon_0 = 0, resolution = 'l', area_thresh = 1000, llcrnrlon=-136.25, llcrnrlat=56, urcrnrlon=-134.25, urcrnrlat=57.75)
+map = Basemap(projection = 'merc', lat_0 = 0, lon_0 = 106, resolution = 'l', area_thresh = 1000, llcrnrlon=20, llcrnrlat=-50, urcrnrlon=220, urcrnrlat=50)
 
 map.drawcoastlines()
 map.drawcountries()
@@ -28,14 +28,9 @@ pVerr_known_file = open("/Users/neavemj/microbiome/subprojects/4.map/p.verrucosa
 
 spist_known = pd.DataFrame.from_csv(spist_known_file)
 
-print spist_known
+x,y = map(list(spist_known["longitude"]), list(spist_known["latitude"]))
 
-lon = -135.33
-lat = 57.08
-x,y = map(lon, lat)
-
-map.plot(x, y, 'ro', markersize=12)
-
+map.plot(x, y, 'ro', markersize=8)
 
 
 plt.show()
