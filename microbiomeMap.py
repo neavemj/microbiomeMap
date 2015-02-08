@@ -38,9 +38,9 @@ sites = pd.DataFrame.from_csv(sites_file, sep='\t')
 
 x,y = map(list(sites["Longitude"]), list(sites["Latitude"]))
 
-print x,y
+map.plot(x, y, 'ro', markersize=5)
 
-map.plot(x, y, 'ro', markersize=8)
+plt.savefig("spistMap.pdf", format='pdf')
 
 plt.show()
 
