@@ -27,18 +27,17 @@ map.drawmapboundary()
 map.drawmeridians(np.arange(0, 360, 30), labels=[False, False, False, True], linewidth=0.1)
 map.drawparallels(np.arange(-90, 90, 30), labels=[False, True, False, False], linewidth=0.1)
 
-#spist_known_file = open("/Users/neavemj/microbiome/subprojects/4.map/s.pistillataKnownDist.csv")
-#pVerr_known_file = open("/Users/neavemj/microbiome/subprojects/4.map/p.verrucosaKnownDist.csv")
-#spist_known = pd.DataFrame.from_csv(spist_known_file)
-#x,y = map(list(spist_known["longitude"]), list(spist_known["latitude"]))
+spist_known_file = open("/Users/neavemj/microbiome/subprojects/4.map/s.pistillataKnownDist.csv")
+pVerr_known_file = open("/Users/neavemj/microbiome/subprojects/4.map/p.verrucosaKnownDist.csv")
+spist_known = pd.DataFrame.from_csv(spist_known_file)
+a,b = map(list(spist_known["longitude"]), list(spist_known["latitude"]))
 
 sites_file = open("/Users/neavemj/microbiome/siteCoordinates.txt")
-
 sites = pd.DataFrame.from_csv(sites_file, sep='\t')
+c,d = map(list(sites["Longitude"]), list(sites["Latitude"]))
 
-x,y = map(list(sites["Longitude"]), list(sites["Latitude"]))
-
-map.plot(x, y, 'ro', markersize=5)
+map.plot(a, b, 'bo', markersize=2)
+map.plot(c, d, 'ro', markersize=5)
 
 plt.savefig("spistMap.pdf", format='pdf')
 
