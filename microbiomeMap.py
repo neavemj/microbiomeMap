@@ -31,9 +31,9 @@ pVerr_known_file = open("/Users/neavemj/microbiome/subprojects/4.map/p.verrucosa
 pVerr_known = pd.DataFrame.from_csv(pVerr_known_file)
 a,b = map(list(pVerr_known["longitude"]), list(pVerr_known["latitude"]))
 
-#spist_known_file = open("/Users/neavemj/microbiome/subprojects/4.map/s.pistillataKnownDist.csv")
-#spist_known = pd.DataFrame.from_csv(spist_known_file)
-#a,b = map(list(spist_known["longitude"]), list(spist_known["latitude"]))
+spist_known_file = open("/Users/neavemj/microbiome/subprojects/4.map/s.pistillataKnownDist.csv")
+spist_known = pd.DataFrame.from_csv(spist_known_file)
+g,h = map(list(spist_known["longitude"]), list(spist_known["latitude"]))
 
 sites_file = open("/Users/neavemj/microbiome/siteCoordinates.txt")
 sites = pd.DataFrame.from_csv(sites_file, sep='\t')
@@ -44,6 +44,7 @@ sitesPverr = pd.DataFrame.from_csv(sitesPverr_file, sep='\t')
 e,f = map(list(sitesPverr["Longitude"]), list(sitesPverr["Latitude"]))
 
 map.plot(a, b, 'bo', markersize=20, markeredgecolor='none')
+map.plot(g, h, 'yo', markersize=20, markeredgecolor='none')
 map.plot(c, d, 'ro', markersize=5)
 map.plot(e, f, 'ro', markersize=5)
 
