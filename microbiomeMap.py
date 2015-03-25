@@ -44,9 +44,9 @@ sitesPverr = pd.DataFrame.from_csv(sitesPverr_file, sep='\t')
 e,f = map(list(sitesPverr["Longitude"]), list(sitesPverr["Latitude"]))
 
 map.plot(a, b, 'bo', markersize=20, markeredgecolor='none')
-map.plot(g, h, 'yo', markersize=20, markeredgecolor='none')
-map.plot(c, d, 'ro', markersize=5)
-map.plot(e, f, 'ro', markersize=5)
+map.plot(g, h, 'go', markersize=20, markeredgecolor='none')
+map.plot(c, d, 'ro', markersize=10)
+map.plot(e, f, 'ro', markersize=10)
 
 plt.savefig("spistMap.pdf", format='pdf')
 
