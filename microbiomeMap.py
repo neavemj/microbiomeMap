@@ -35,7 +35,7 @@ spist_known_file = open("/Users/neavemj/microbiome/subprojects/4.map/s.pistillat
 spist_known = pd.DataFrame.from_csv(spist_known_file)
 g,h = map(list(spist_known["longitude"]), list(spist_known["latitude"]))
 
-sites_file = open("/Users/neavemj/microbiome/siteCoordinates.txt")
+sites_file = open("/Users/neavemj/microbiome/subprojects/4.map/siteCoordinates.txt")
 sites = pd.DataFrame.from_csv(sites_file, sep='\t')
 c,d = map(list(sites["Longitude"]), list(sites["Latitude"]))
 
