@@ -9,9 +9,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-# function to change degrees to decimal degrees if needed
-# My co-ordinates are given as degrees then decimal minutes. Seconds are not given so I've commented then out.
-
 print '*** creating map ***'
 
 # the ll and ur mean lower-left corner, upper-right corner etc. for zooming on a region
